@@ -35,8 +35,8 @@
 					<label for="check"><span class="icon"></span> Keep me Signed in</label>
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="Sign In">
-				</div>
+				<asp:Button ID="ButtonSignIn" CssClass="button" runat="server" Text="Sign In" OnClick="ButtonSignIn_Click" />
+&nbsp;</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="#forgot">Forgot Password?</a>
