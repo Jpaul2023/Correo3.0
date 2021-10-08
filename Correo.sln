@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Correo", "Correo\Correo.csproj", "{AECD52B8-A629-430B-B010-D2F182B3C182}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AECD52B8-A629-430B-B010-D2F182B3C182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECD52B8-A629-430B-B010-D2F182B3C182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECD52B8-A629-430B-B010-D2F182B3C182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECD52B8-A629-430B-B010-D2F182B3C182}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7F483F4-3D1F-42D8-8CDC-A89BEA8467A5}
+	EndGlobalSection
+EndGlobal
