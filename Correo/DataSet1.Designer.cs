@@ -238,6 +238,21 @@ namespace Correo {
             base.Tables.Add(this.tableemail);
             this.tablePersona = new PersonaDataTable();
             base.Tables.Add(this.tablePersona);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_emisor_codPersona", new global::System.Data.DataColumn[] {
+                        this.tablePersona.codigoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableemail.emisorColumn});
+            this.tableemail.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_receptor_codPersona", new global::System.Data.DataColumn[] {
+                        this.tablePersona.codigoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableemail.receptorColumn});
+            this.tableemail.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
             this.relationFK_emisor_codPersona = new global::System.Data.DataRelation("FK_emisor_codPersona", new global::System.Data.DataColumn[] {
                         this.tablePersona.codigoColumn}, new global::System.Data.DataColumn[] {
                         this.tableemail.emisorColumn}, false);
@@ -1538,11 +1553,22 @@ namespace Correo.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT codigo, emisor, receptor, asunto, cuerpo, fecha, estadoER FROM dbo.email";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO email\r\n                  (emisor, receptor, asunto, cuerpo, fecha, es" +
+                "tadoER)\r\nVALUES (@emisor,@receptor,@asunto,@cuerpo,@fecha,@estadoER)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emisor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "emisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receptor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "receptor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@asunto", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "asunto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuerpo", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "cuerpo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoER", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1753,6 +1779,50 @@ namespace Correo.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string emisor, string receptor, string asunto, string cuerpo, System.DateTime fecha, global::System.Nullable<bool> estadoER, string Original_codigo) {
             return this.Update(Original_codigo, emisor, receptor, asunto, cuerpo, fecha, estadoER, Original_codigo);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int Enviados(int emisor, int receptor, string asunto, string cuerpo, System.DateTime fecha, global::System.Nullable<bool> estadoER) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(emisor));
+            command.Parameters[1].Value = ((int)(receptor));
+            if ((asunto == null)) {
+                throw new global::System.ArgumentNullException("asunto");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(asunto));
+            }
+            if ((cuerpo == null)) {
+                throw new global::System.ArgumentNullException("cuerpo");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(cuerpo));
+            }
+            command.Parameters[4].Value = ((System.DateTime)(fecha));
+            if ((estadoER.HasValue == true)) {
+                command.Parameters[5].Value = ((bool)(estadoER.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
