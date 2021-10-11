@@ -39,6 +39,7 @@ namespace Correo
 					pass = fila[4].ToString();
 					if (User == auxtbemail && pass == auxtbpass)
 					{
+						Session["AuxiliarCorreo"] = fila[3].ToString();
 						Session["NombreUsuario"] = fila[1].ToString();
 						Response.Redirect("Recibidos.aspx");
 					}
