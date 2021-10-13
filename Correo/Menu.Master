@@ -43,6 +43,7 @@
 						<tr>
 							<td>
 				<asp:TextBox ID="TextBox1" CssClass="auto-style1" placeholder="Buscar" runat="server" Width="435px"></asp:TextBox>
+							    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 							</td>
 						</tr>
 					</table>

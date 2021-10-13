@@ -13,7 +13,7 @@ namespace Correo
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			
 		}
 		PersonaTableAdapter misusuarios = new PersonaTableAdapter();
 
@@ -49,6 +49,7 @@ namespace Correo
 			{
 				TextBoxemail.Text = "Usuario no encontrado";
 			}
+			
 
 		}
 	}

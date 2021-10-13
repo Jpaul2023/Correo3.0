@@ -11,7 +11,13 @@ namespace Correo
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			if  (Session["NombreUsuario"] != null)
 
+
+			 {
+				Label1.Text = Session["NombreUsuario"].ToString();
+
+			}
 		}
 	}
 }
