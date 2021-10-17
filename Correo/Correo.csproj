@@ -68,9 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="delete-16.png" />
+    <Content Include="eye-16 %281%29.png" />
     <Content Include="Formulario web1.aspx" />
     <Content Include="logo.jpg" />
     <Content Include="menu.css" />
+    <Content Include="outline-star-16.png" />
     <Content Include="Recibidos.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
