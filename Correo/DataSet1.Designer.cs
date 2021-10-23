@@ -28,6 +28,8 @@ namespace Correo {
         
         private PersonaDataTable tablePersona;
         
+        private email1DataTable tableemail1;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61,6 +63,9 @@ namespace Correo {
                 }
                 if ((ds.Tables["Persona"] != null)) {
                     base.Tables.Add(new PersonaDataTable(ds.Tables["Persona"]));
+                }
+                if ((ds.Tables["email1"] != null)) {
+                    base.Tables.Add(new email1DataTable(ds.Tables["email1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +102,16 @@ namespace Correo {
         public PersonaDataTable Persona {
             get {
                 return this.tablePersona;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public email1DataTable email1 {
+            get {
+                return this.tableemail1;
             }
         }
         
@@ -173,6 +188,9 @@ namespace Correo {
                 if ((ds.Tables["Persona"] != null)) {
                     base.Tables.Add(new PersonaDataTable(ds.Tables["Persona"]));
                 }
+                if ((ds.Tables["email1"] != null)) {
+                    base.Tables.Add(new email1DataTable(ds.Tables["email1"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -218,6 +236,12 @@ namespace Correo {
                     this.tablePersona.InitVars();
                 }
             }
+            this.tableemail1 = ((email1DataTable)(base.Tables["email1"]));
+            if ((initTable == true)) {
+                if ((this.tableemail1 != null)) {
+                    this.tableemail1.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +256,8 @@ namespace Correo {
             base.Tables.Add(this.tableemail);
             this.tablePersona = new PersonaDataTable();
             base.Tables.Add(this.tablePersona);
+            this.tableemail1 = new email1DataTable();
+            base.Tables.Add(this.tableemail1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -243,6 +269,12 @@ namespace Correo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializePersona() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeemail1() {
             return false;
         }
         
@@ -307,6 +339,9 @@ namespace Correo {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void PersonaRowChangeEventHandler(object sender, PersonaRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void email1RowChangeEventHandler(object sender, email1RowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -314,17 +349,17 @@ namespace Correo {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class emailDataTable : global::System.Data.TypedTableBase<emailRow> {
             
-            private global::System.Data.DataColumn columncodigo;
+            private global::System.Data.DataColumn columnCODIGO;
             
-            private global::System.Data.DataColumn columnemisor;
+            private global::System.Data.DataColumn columnEMISOR;
             
-            private global::System.Data.DataColumn columnreceptor;
+            private global::System.Data.DataColumn columnRECEPTOR;
             
-            private global::System.Data.DataColumn columnasunto;
+            private global::System.Data.DataColumn columnASUNTO;
             
-            private global::System.Data.DataColumn columncuerpo;
+            private global::System.Data.DataColumn columnCUERPO;
             
-            private global::System.Data.DataColumn columnfecha;
+            private global::System.Data.DataColumn columnFECHA;
             
             private global::System.Data.DataColumn columnestadoER;
             
@@ -363,49 +398,49 @@ namespace Correo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn codigoColumn {
+            public global::System.Data.DataColumn CODIGOColumn {
                 get {
-                    return this.columncodigo;
+                    return this.columnCODIGO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn emisorColumn {
+            public global::System.Data.DataColumn EMISORColumn {
                 get {
-                    return this.columnemisor;
+                    return this.columnEMISOR;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn receptorColumn {
+            public global::System.Data.DataColumn RECEPTORColumn {
                 get {
-                    return this.columnreceptor;
+                    return this.columnRECEPTOR;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn asuntoColumn {
+            public global::System.Data.DataColumn ASUNTOColumn {
                 get {
-                    return this.columnasunto;
+                    return this.columnASUNTO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cuerpoColumn {
+            public global::System.Data.DataColumn CUERPOColumn {
                 get {
-                    return this.columncuerpo;
+                    return this.columnCUERPO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn fechaColumn {
+            public global::System.Data.DataColumn FECHAColumn {
                 get {
-                    return this.columnfecha;
+                    return this.columnFECHA;
                 }
             }
             
@@ -454,15 +489,15 @@ namespace Correo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public emailRow AddemailRow(string emisor, string receptor, string asunto, string cuerpo, System.DateTime fecha, bool estadoER) {
+            public emailRow AddemailRow(string EMISOR, string RECEPTOR, string ASUNTO, string CUERPO, System.DateTime FECHA, bool estadoER) {
                 emailRow rowemailRow = ((emailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        emisor,
-                        receptor,
-                        asunto,
-                        cuerpo,
-                        fecha,
+                        EMISOR,
+                        RECEPTOR,
+                        ASUNTO,
+                        CUERPO,
+                        FECHA,
                         estadoER};
                 rowemailRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowemailRow);
@@ -471,9 +506,9 @@ namespace Correo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public emailRow FindBycodigo(int codigo) {
+            public emailRow FindByCODIGO(int CODIGO) {
                 return ((emailRow)(this.Rows.Find(new object[] {
-                            codigo})));
+                            CODIGO})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -493,49 +528,49 @@ namespace Correo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columncodigo = base.Columns["codigo"];
-                this.columnemisor = base.Columns["emisor"];
-                this.columnreceptor = base.Columns["receptor"];
-                this.columnasunto = base.Columns["asunto"];
-                this.columncuerpo = base.Columns["cuerpo"];
-                this.columnfecha = base.Columns["fecha"];
+                this.columnCODIGO = base.Columns["CODIGO"];
+                this.columnEMISOR = base.Columns["EMISOR"];
+                this.columnRECEPTOR = base.Columns["RECEPTOR"];
+                this.columnASUNTO = base.Columns["ASUNTO"];
+                this.columnCUERPO = base.Columns["CUERPO"];
+                this.columnFECHA = base.Columns["FECHA"];
                 this.columnestadoER = base.Columns["estadoER"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncodigo);
-                this.columnemisor = new global::System.Data.DataColumn("emisor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnemisor);
-                this.columnreceptor = new global::System.Data.DataColumn("receptor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnreceptor);
-                this.columnasunto = new global::System.Data.DataColumn("asunto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnasunto);
-                this.columncuerpo = new global::System.Data.DataColumn("cuerpo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncuerpo);
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha);
+                this.columnCODIGO = new global::System.Data.DataColumn("CODIGO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCODIGO);
+                this.columnEMISOR = new global::System.Data.DataColumn("EMISOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEMISOR);
+                this.columnRECEPTOR = new global::System.Data.DataColumn("RECEPTOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRECEPTOR);
+                this.columnASUNTO = new global::System.Data.DataColumn("ASUNTO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASUNTO);
+                this.columnCUERPO = new global::System.Data.DataColumn("CUERPO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUERPO);
+                this.columnFECHA = new global::System.Data.DataColumn("FECHA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFECHA);
                 this.columnestadoER = new global::System.Data.DataColumn("estadoER", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestadoER);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columncodigo}, true));
-                this.columncodigo.AutoIncrement = true;
-                this.columncodigo.AutoIncrementSeed = -1;
-                this.columncodigo.AutoIncrementStep = -1;
-                this.columncodigo.AllowDBNull = false;
-                this.columncodigo.ReadOnly = true;
-                this.columncodigo.Unique = true;
-                this.columnemisor.AllowDBNull = false;
-                this.columnemisor.MaxLength = 50;
-                this.columnreceptor.AllowDBNull = false;
-                this.columnreceptor.MaxLength = 50;
-                this.columnasunto.AllowDBNull = false;
-                this.columnasunto.MaxLength = 2147483647;
-                this.columncuerpo.AllowDBNull = false;
-                this.columncuerpo.MaxLength = 2147483647;
-                this.columnfecha.AllowDBNull = false;
+                                this.columnCODIGO}, true));
+                this.columnCODIGO.AutoIncrement = true;
+                this.columnCODIGO.AutoIncrementSeed = -1;
+                this.columnCODIGO.AutoIncrementStep = -1;
+                this.columnCODIGO.AllowDBNull = false;
+                this.columnCODIGO.ReadOnly = true;
+                this.columnCODIGO.Unique = true;
+                this.columnEMISOR.AllowDBNull = false;
+                this.columnEMISOR.MaxLength = 50;
+                this.columnRECEPTOR.AllowDBNull = false;
+                this.columnRECEPTOR.MaxLength = 50;
+                this.columnASUNTO.AllowDBNull = false;
+                this.columnASUNTO.MaxLength = 2147483647;
+                this.columnCUERPO.AllowDBNull = false;
+                this.columnCUERPO.MaxLength = 2147483647;
+                this.columnFECHA.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -999,6 +1034,302 @@ namespace Correo {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class email1DataTable : global::System.Data.TypedTableBase<email1Row> {
+            
+            private global::System.Data.DataColumn columnemisor;
+            
+            private global::System.Data.DataColumn columnasunto;
+            
+            private global::System.Data.DataColumn columncuerpo;
+            
+            private global::System.Data.DataColumn columnfecha;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public email1DataTable() {
+                this.TableName = "email1";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal email1DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected email1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn emisorColumn {
+                get {
+                    return this.columnemisor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn asuntoColumn {
+                get {
+                    return this.columnasunto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cuerpoColumn {
+                get {
+                    return this.columncuerpo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fechaColumn {
+                get {
+                    return this.columnfecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public email1Row this[int index] {
+                get {
+                    return ((email1Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event email1RowChangeEventHandler email1RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event email1RowChangeEventHandler email1RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event email1RowChangeEventHandler email1RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event email1RowChangeEventHandler email1RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addemail1Row(email1Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public email1Row Addemail1Row(string emisor, string asunto, string cuerpo, System.DateTime fecha) {
+                email1Row rowemail1Row = ((email1Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        emisor,
+                        asunto,
+                        cuerpo,
+                        fecha};
+                rowemail1Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowemail1Row);
+                return rowemail1Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                email1DataTable cln = ((email1DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new email1DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnemisor = base.Columns["emisor"];
+                this.columnasunto = base.Columns["asunto"];
+                this.columncuerpo = base.Columns["cuerpo"];
+                this.columnfecha = base.Columns["fecha"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnemisor = new global::System.Data.DataColumn("emisor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemisor);
+                this.columnasunto = new global::System.Data.DataColumn("asunto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnasunto);
+                this.columncuerpo = new global::System.Data.DataColumn("cuerpo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncuerpo);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha);
+                this.columnemisor.AllowDBNull = false;
+                this.columnemisor.MaxLength = 50;
+                this.columnasunto.AllowDBNull = false;
+                this.columnasunto.MaxLength = 2147483647;
+                this.columncuerpo.AllowDBNull = false;
+                this.columncuerpo.MaxLength = 2147483647;
+                this.columnfecha.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public email1Row Newemail1Row() {
+                return ((email1Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new email1Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(email1Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.email1RowChanged != null)) {
+                    this.email1RowChanged(this, new email1RowChangeEvent(((email1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.email1RowChanging != null)) {
+                    this.email1RowChanging(this, new email1RowChangeEvent(((email1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.email1RowDeleted != null)) {
+                    this.email1RowDeleted(this, new email1RowChangeEvent(((email1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.email1RowDeleting != null)) {
+                    this.email1RowDeleting(this, new email1RowChangeEvent(((email1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removeemail1Row(email1Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "email1DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class emailRow : global::System.Data.DataRow {
@@ -1014,67 +1345,67 @@ namespace Correo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int codigo {
+            public int CODIGO {
                 get {
-                    return ((int)(this[this.tableemail.codigoColumn]));
+                    return ((int)(this[this.tableemail.CODIGOColumn]));
                 }
                 set {
-                    this[this.tableemail.codigoColumn] = value;
+                    this[this.tableemail.CODIGOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string emisor {
+            public string EMISOR {
                 get {
-                    return ((string)(this[this.tableemail.emisorColumn]));
+                    return ((string)(this[this.tableemail.EMISORColumn]));
                 }
                 set {
-                    this[this.tableemail.emisorColumn] = value;
+                    this[this.tableemail.EMISORColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string receptor {
+            public string RECEPTOR {
                 get {
-                    return ((string)(this[this.tableemail.receptorColumn]));
+                    return ((string)(this[this.tableemail.RECEPTORColumn]));
                 }
                 set {
-                    this[this.tableemail.receptorColumn] = value;
+                    this[this.tableemail.RECEPTORColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string asunto {
+            public string ASUNTO {
                 get {
-                    return ((string)(this[this.tableemail.asuntoColumn]));
+                    return ((string)(this[this.tableemail.ASUNTOColumn]));
                 }
                 set {
-                    this[this.tableemail.asuntoColumn] = value;
+                    this[this.tableemail.ASUNTOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string cuerpo {
+            public string CUERPO {
                 get {
-                    return ((string)(this[this.tableemail.cuerpoColumn]));
+                    return ((string)(this[this.tableemail.CUERPOColumn]));
                 }
                 set {
-                    this[this.tableemail.cuerpoColumn] = value;
+                    this[this.tableemail.CUERPOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime fecha {
+            public System.DateTime FECHA {
                 get {
-                    return ((global::System.DateTime)(this[this.tableemail.fechaColumn]));
+                    return ((global::System.DateTime)(this[this.tableemail.FECHAColumn]));
                 }
                 set {
-                    this[this.tableemail.fechaColumn] = value;
+                    this[this.tableemail.FECHAColumn] = value;
                 }
             }
             
@@ -1206,6 +1537,65 @@ namespace Correo {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class email1Row : global::System.Data.DataRow {
+            
+            private email1DataTable tableemail1;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal email1Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableemail1 = ((email1DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string emisor {
+                get {
+                    return ((string)(this[this.tableemail1.emisorColumn]));
+                }
+                set {
+                    this[this.tableemail1.emisorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string asunto {
+                get {
+                    return ((string)(this[this.tableemail1.asuntoColumn]));
+                }
+                set {
+                    this[this.tableemail1.asuntoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cuerpo {
+                get {
+                    return ((string)(this[this.tableemail1.cuerpoColumn]));
+                }
+                set {
+                    this[this.tableemail1.cuerpoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha {
+                get {
+                    return ((global::System.DateTime)(this[this.tableemail1.fechaColumn]));
+                }
+                set {
+                    this[this.tableemail1.fechaColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1259,6 +1649,40 @@ namespace Correo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PersonaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class email1RowChangeEvent : global::System.EventArgs {
+            
+            private email1Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public email1RowChangeEvent(email1Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public email1Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -1398,12 +1822,12 @@ namespace Correo.DataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "email";
-            tableMapping.ColumnMappings.Add("codigo", "codigo");
-            tableMapping.ColumnMappings.Add("emisor", "emisor");
-            tableMapping.ColumnMappings.Add("receptor", "receptor");
-            tableMapping.ColumnMappings.Add("asunto", "asunto");
-            tableMapping.ColumnMappings.Add("cuerpo", "cuerpo");
-            tableMapping.ColumnMappings.Add("fecha", "fecha");
+            tableMapping.ColumnMappings.Add("codigo", "CODIGO");
+            tableMapping.ColumnMappings.Add("emisor", "EMISOR");
+            tableMapping.ColumnMappings.Add("receptor", "RECEPTOR");
+            tableMapping.ColumnMappings.Add("asunto", "ASUNTO");
+            tableMapping.ColumnMappings.Add("cuerpo", "CUERPO");
+            tableMapping.ColumnMappings.Add("fecha", "FECHA");
             tableMapping.ColumnMappings.Add("estadoER", "estadoER");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -1447,7 +1871,7 @@ namespace Correo.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT codigo, emisor, receptor, asunto, cuerpo, fecha, estadoER FROM dbo.email";
@@ -1463,6 +1887,12 @@ namespace Correo.DataSet1TableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuerpo", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "cuerpo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoER", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT emisor, asunto, cuerpo, fecha, receptor\r\nFROM     email\r\nWHERE  (receptor " +
+                "= @receptor)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receptor", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "receptor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1484,6 +1914,23 @@ namespace Correo.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.emailDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.emailDataTable dataTable = new DataSet1.emailDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.emailDataTable GetDataBy1(string receptor) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((receptor == null)) {
+                throw new global::System.ArgumentNullException("receptor");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(receptor));
+            }
             DataSet1.emailDataTable dataTable = new DataSet1.emailDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2162,6 +2609,163 @@ namespace Correo.DataSet1TableAdapters {
                 }
             }
             return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class email1TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public email1TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "email1";
+            tableMapping.ColumnMappings.Add("emisor", "emisor");
+            tableMapping.ColumnMappings.Add("asunto", "asunto");
+            tableMapping.ColumnMappings.Add("cuerpo", "cuerpo");
+            tableMapping.ColumnMappings.Add("fecha", "fecha");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["CorreoConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT emisor, asunto, cuerpo, fecha\r\nFROM     email";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.email1DataTable LeerEmail() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.email1DataTable dataTable = new DataSet1.email1DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

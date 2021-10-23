@@ -34,10 +34,10 @@ namespace Correo
 
 			if (Session["NombreUsuario"] != null)
 			{
-				EnviarCorreo.Enviar(Session["AuxiliarCorreo"].ToString(), TextBoxdestinatario.Text, TextBoxasunto.Text, TextboxMensage.Text, DateTime.Today, false); ;
+				EnviarCorreo.Enviar(Session["AuxiliarCorreo"].ToString(), TextBoxdestinatario.Text, TextBoxasunto.Text, TextBoxmensaje.Text, DateTime.Today, false); ;
 				TextBoxdestinatario.Text = "";
 				TextBoxasunto.Text = "";
-				TextboxMensage.Text = "";
+				TextBoxmensaje.Text = "";
 			
 			
 			}
