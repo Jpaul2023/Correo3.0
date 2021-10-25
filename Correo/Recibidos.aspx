@@ -32,10 +32,18 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
            
-    
+    <script>
+        var myVar = <%=datoc%>;
+        alert(myVar);
+        function mostrar_mensaje(user_id) {
+            <%=datoc%>=user_id;
+            var datos = <%=get_email(datoc)%>;
+        }
+    </script>
+
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-  
+
       <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

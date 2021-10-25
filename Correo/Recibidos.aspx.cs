@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Correo.DataSet1TableAdapters;
 using System.Data;
+using System.Text;
 
 namespace Correo
 {
@@ -14,22 +15,64 @@ namespace Correo
 		emailTableAdapter leerCorreo = new emailTableAdapter();
 		DataTable TableCorreo = new DataTable();
 		
+		public string load_emails(string user)
+        {
+			StringBuilder sb = new StringBuilder();
+			sb.Append("<table class=\"table table - dark table - hover\">");
+			sb.Append("<thead>");
+			sb.Append("<tr>");
+			sb.Append("<th>");
 
+			sb.Append("</th>");
+			sb.Append("<tr>");
+			sb.Append("</thead>");
+			sb.Append("<tbody>");
+			DataTable tblaux = leerCorreo.LeerRecibido(Session["AuxiliarCorreo"].ToString());
+
+			foreach (DataRow fila in tblaux.Rows)
+			{
+				sb.Append("<tr>");
+				sb.Append("<td>");
+				sb.Append("<input type=\"check\" id\"chk"+ fila[0] + "\">");
+				sb.Append("</td>");
+				sb.Append("<td>");
+				sb.Append("<button class=\"btn btn - primary\" type=\"button\" onclick=\"borrar_mensaje(" + fila[0] + ")\"><i class=\"fas fa - trash - alt\"></i></button>");
+				sb.Append("</td>");
+				sb.Append("<td>");
+				sb.Append("<button class=\"btn btn - primary\" type=\"button\" onclick=\"agregar_favorito(" + fila[0] + ")\"><i class=\"far fa - star\"></i></button>");
+				sb.Append("</td>");
+				sb.Append("<td>");
+				sb.Append("<button class=\"btn btn - primary\" type=\"button\" onclick=\"mostrar_mensaje(" + fila[0] + ")\"><i class=\"fas fa - eye\"></i></button>");
+				sb.Append("</td>");
+				sb.Append("<td>");
+				TableCorreo.Rows.Add(fila[0]);
+				sb.Append("</td>");
+				sb.Append("</tr>");
+			}
+			sb.Append("</tbody>");
+			sb.Append("</table>");
+			return sb.ToString();
+		}
+
+		public string get_email(string id)
+        {
+
+			return "";
+        }
+		public static string datoc = "hola mundo";
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			TableCorreo = leerCorreo.LeerRecibido(Session["AuxiliarCorreo"].ToString());
+			
+			DataTable tblaux = leerCorreo.LeerRecibido(Session["AuxiliarCorreo"].ToString());
 
-			foreach (DataRow fila in TableCorreo.Rows)
+			foreach (DataRow fila in tblaux.Rows)
 			{
 				if (Session["AuxiliarCorreo"].ToString() == fila[2].ToString())
 				{
-					Session["auxcod"] = fila[0];
-					GridView1.DataSource = TableCorreo;
-					GridView1.DataBind();
+					TableCorreo.Rows.Add(fila[0]);
 				}
-
 			}
-
+			Session["auxcod"] = TableCorreo;
 		}
 
 		protected void GridView1_DataBound(object sender, EventArgs e)
@@ -76,8 +119,9 @@ namespace Correo
         {
 			if(e.CommandName=="BTeliminar")
             {
+				
 
-            }
+			}
 			
 			
         }
