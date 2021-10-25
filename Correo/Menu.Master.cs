@@ -34,7 +34,7 @@ namespace Correo
 
 			if (Session["NombreUsuario"] != null)
 			{
-				EnviarCorreo.Enviar(Session["AuxiliarCorreo"].ToString(), TextBoxdestinatario.Text, TextBoxasunto.Text, TextBoxmensaje.Text, DateTime.Today, false); ;
+				EnviarCorreo.EnviarCorreo(Session["AuxCorreo"].ToString(), TextBoxdestinatario.Text, TextBoxasunto.Text, TextBoxmensaje.Text, DateTime.Today, "Enviado");
 				TextBoxdestinatario.Text = "";
 				TextBoxasunto.Text = "";
 				TextBoxmensaje.Text = "";

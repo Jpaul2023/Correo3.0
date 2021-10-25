@@ -13,15 +13,17 @@ namespace Correo
 	{
 		emailTableAdapter leerCorreo = new emailTableAdapter();
 		DataTable TableCorreo = new DataTable();
+		
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			TableCorreo = leerCorreo.GetDataBy1(Session["AuxiliarCorreo"].ToString());
+			TableCorreo = leerCorreo.LeerRecibido(Session["AuxiliarCorreo"].ToString());
 
 			foreach (DataRow fila in TableCorreo.Rows)
 			{
 				if (Session["AuxiliarCorreo"].ToString() == fila[2].ToString())
 				{
+					Session["auxcod"] = fila[0];
 					GridView1.DataSource = TableCorreo;
 					GridView1.DataBind();
 				}
@@ -68,5 +70,18 @@ namespace Correo
 
 		}
 		
+
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+			if(e.CommandName=="BTeliminar")
+            {
+
+            }
+			
+			
+        }
+
+	
     }
 }
