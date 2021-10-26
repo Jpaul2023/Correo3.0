@@ -6,30 +6,28 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Correo.DataSet1TableAdapters;
 using System.Data;
+using System.Windows;
 
 namespace Correo
 {
 	public partial class Recibidos : System.Web.UI.Page
 	{
-		emailTableAdapter leerCorreo = new emailTableAdapter();
-		DataTable TableCorreo = new DataTable();
-		
+			emailTableAdapter leerCorreo = new emailTableAdapter();
+			DataTable TableCorreo = new DataTable();
+			DataTable filtrXestado = new DataTable();
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			TableCorreo = leerCorreo.LeerRecibido(Session["AuxiliarCorreo"].ToString());
-
+			TableCorreo = leerCorreo.LeerRecibido(Session["AuxiliarCorreo"].ToString(), "RecLeido");
+			
+			
 			foreach (DataRow fila in TableCorreo.Rows)
 			{
-				if (Session["AuxiliarCorreo"].ToString() == fila[2].ToString())
-				{
-					Session["auxcod"] = fila[0];
+
 					GridView1.DataSource = TableCorreo;
-					GridView1.DataBind();
-				}
-
+					GridView1.DataBind();		
+				
 			}
-
 		}
 
 		protected void GridView1_DataBound(object sender, EventArgs e)
@@ -40,17 +38,17 @@ namespace Correo
 
 		protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 		{
-			//ocultar el codigo
-			if (e.Row.RowType ==DataControlRowType.Header)
+            //ocultar el codigo
+            if (e.Row.RowType == DataControlRowType.Header)
             {
-				e.Row.Cells[4].Visible = false;
+                e.Row.Cells[4].Visible = false;
             }
-			if (e.Row.RowType == DataControlRowType.DataRow)
-			{
-				e.Row.Cells[4].Visible = false;
-			}
-			//ocultar el receptor
-			if (e.Row.RowType == DataControlRowType.Header)
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[4].Visible = false;
+            }
+            //ocultar el receptor
+            if (e.Row.RowType == DataControlRowType.Header)
 			{
 				e.Row.Cells[6].Visible = false;
 			}
@@ -74,13 +72,57 @@ namespace Correo
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-			if(e.CommandName=="BTeliminar")
-            {
+		 //se genera la consulta para el click del boton eliminar
+			if(e.CommandName.CompareTo("BTeliminar")==0)
+			{ 
+			 //obtenemos el indice de la fila seleccionada por el boton
+				int indice = Convert.ToInt32(e.CommandArgument);
+				
+				DataTable TC = new DataTable();
+			 //filtramos codigos utilizando el indice y la columna 4 del grid ya que es la de codigos, a us vez llenamos la tabla TC
+				 TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[4].Text));
+			 //Tabla TC llena con una sola fila, se logra editar el estado 
+                foreach (DataRow fila in TC.Rows)
+				{
+					leerCorreo.EditarEstado("Eliminado", Convert.ToInt32(fila[0]));
+				}
+				
+			}
+		//*********************************************************************************************************
+			
+			if (e.CommandName.CompareTo("BTfavoritos") == 0)
+			{
+				//obtenemos el indice de la fila seleccionada por el boton
+				int indice = Convert.ToInt32(e.CommandArgument);
 
-            }
-			
-			
-        }
+				DataTable TC = new DataTable();
+				//filtramos codigos utilizando el indice y la columna 4 del grid ya que es la de codigos, a us vez llenamos la tabla TC
+				TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[4].Text));
+				//Tabla TC llena con una sola fila, se logra editar el estado 
+				foreach (DataRow fila in TC.Rows)
+				{
+					leerCorreo.EditarEstado("Destacado", Convert.ToInt32(fila[0]));
+				}
+				GridView1.DataBind();
+			}
+			//*********************************************************************************************************
+			if (e.CommandName.CompareTo("BTver") == 0)
+			{
+				//obtenemos el indice de la fila seleccionada por el boton
+				int indice = Convert.ToInt32(e.CommandArgument);
+
+				DataTable TC = new DataTable();
+				//filtramos codigos utilizando el indice y la columna 4 del grid ya que es la de codigos, a us vez llenamos la tabla TC
+				TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[4].Text));
+				//Tabla TC llena con una sola fila, se logra editar el estado 
+				foreach (DataRow fila in TC.Rows)
+				{
+					leerCorreo.EditarEstado("RecLeido", Convert.ToInt32(fila[0]));
+				}
+				
+			}
+
+		}
 
 	
     }

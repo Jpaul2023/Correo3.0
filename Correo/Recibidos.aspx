@@ -30,8 +30,8 @@
             <SortedAscendingHeaderStyle BackColor="#506C8C" />
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-        </asp:GridView>
-           
+        </asp:GridView> 
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
