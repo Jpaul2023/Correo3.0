@@ -67,7 +67,7 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="Favoritos.aspx">
                         <i class="fa fa-star fa-2x"></i>
                         <span class="nav-text">
                             Destacados
@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li>
-                   <a href="#">
+                   <a href="Eliminados.aspx">
                        <i class="fa fa-trash-o fa-2x"></i>
                         <span class="nav-text">
                             Papelera

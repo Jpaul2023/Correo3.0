@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Recibidos.aspx.cs" Inherits="Correo.Recibidos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Eliminados.aspx.cs" Inherits="Correo.Eliminados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
+        
         .auto-style5 {
             height: auto;
             width: auto;
@@ -17,10 +18,10 @@
             <Columns>
                 <asp:TemplateField>
                     <HeaderTemplate>
-                        <asp:CheckBox ID="HeaderChk" AutoPostBack="true"   runat="server" OnCheckedChanged="HeaderChk_CheckedChanged"   />
+                        <asp:CheckBox ID="HeaderChk" AutoPostBack="true"   runat="server" />
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <asp:CheckBox ID="selector" runat="server" OnCheckedChanged="selector_CheckedChanged"/>
+                        <asp:CheckBox ID="selector" runat="server"/>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:ButtonField ButtonType="Image" ImageUrl="~/delete-16.png" Text="ELIMINAR" CommandName="BTeliminar" />
@@ -45,35 +46,4 @@
         </div>
 
     </div>
-    <button type="button" id="BTmodal" runat="server" data-bs-toggle="modal"  data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"></button>
-    <div class="modal fade" runat="server" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-
-      <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nuevo correo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Destinatario:</label>
-			  <asp:TextBox ID="TextBoxdestinatario" class="form-control" runat="server"></asp:TextBox>
-          </div>
-			 <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Asunto:</label>
-				  <asp:TextBox ID="TextBoxasunto" class="form-control" runat="server"></asp:TextBox>
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Mensaje:</label>
-            <asp:TextBox ID="TextBoxmensaje" class="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
-          </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <asp:Button ID="ButtonEnviar" CssClass="btn btn-primary" runat="server" Text="Enviar" />
-      </div>
-    </div>
-  </div>
-          </div>
 </asp:Content>
