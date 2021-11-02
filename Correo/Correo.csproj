@@ -78,6 +78,7 @@
     <Content Include="outline-star-16.png" />
     <Content Include="Recibidos.aspx" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="ver.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="Recibidos.aspx.designer.cs">
       <DependentUpon>Recibidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ver.aspx.cs">
+      <DependentUpon>ver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ver.aspx.designer.cs">
+      <DependentUpon>ver.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

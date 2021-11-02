@@ -26,7 +26,7 @@ namespace Correo
 
 					GridView1.DataSource = TableCorreo;
 					GridView1.DataBind();
-					BTmodal.Visible = true;
+					BTver.Visible = true;
 			}
 		}
 
@@ -163,5 +163,10 @@ namespace Correo
 
             }
         }
-    }
+
+		protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
