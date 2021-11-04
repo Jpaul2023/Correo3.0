@@ -13,9 +13,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="auto-style5">
-        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnDataBound="GridView1_DataBound" OnRowDataBound="GridView1_RowDataBound" OnRowCommand="GridView1_RowCommand">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnDataBound="GridView1_DataBound" OnRowDataBound="GridView1_RowDataBound" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="False">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
+                <asp:BoundField DataField="codigo" HeaderText="Codigo" />
                 <asp:TemplateField>
                     <HeaderTemplate>
                         <asp:CheckBox ID="HeaderChk" AutoPostBack="true"   runat="server" />
@@ -25,9 +26,12 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:ButtonField ButtonType="Image" ImageUrl="~/delete-16.png" Text="ELIMINAR" CommandName="BTeliminar" />
-                <asp:ButtonField ButtonType="Image" ImageUrl="~/outline-star-16.png" Text="Favoritos" CommandName="BTfavoritos" />
-                <asp:ButtonField ButtonType="Image" CommandName="BTver" ImageUrl="~/eye-16 (1).png" Text="VER"/>
-            </Columns>
+                <asp:ButtonField ButtonType="Image" ImageUrl="~/revertir (1).png" Text="VER" CommandName="restaurar" />
+                <asp:BoundField DataField="emisor" HeaderText="Emisor" />
+                <asp:BoundField DataField="asunto" HeaderText="Asunto" />
+                <asp:ButtonField CommandName="BTver" DataTextField="cuerpo" HeaderText="Mensaje" />
+                <asp:BoundField DataField="fecha" HeaderText="Fecha" />
+                </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

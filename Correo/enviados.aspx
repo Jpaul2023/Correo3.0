@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Favoritos.aspx.cs" Inherits="Correo.Favoritos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="enviados.aspx.cs" Inherits="Correo.enviados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-  <style type="text/css">
+    <style>
         .auto-style5 {
             height: auto;
             width: auto;
@@ -10,23 +9,23 @@
             text-align: center;
         }
     </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="auto-style5">
-        <asp:GridView ID="GridDestacados" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None"  OnRowDataBound="GridDestacados_RowDataBound" OnRowCommand="GridDestacados_RowCommand" AutoGenerateColumns="False">
-          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+      <div class="auto-style5">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GridView1_RowDataBound" OnRowCommand="GridView1_RowCommand"  AutoGenerateColumns="False">
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="codigo" HeaderText="Codigo" />
                 <asp:TemplateField>
                     <HeaderTemplate>
-                        <asp:CheckBox ID="HeaderChk"    runat="server"    />
+                        <asp:CheckBox ID="HeaderChk" AutoPostBack="true"   runat="server"   />
                     </HeaderTemplate>
                     <ItemTemplate>
                         <asp:CheckBox ID="selector" runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:ButtonField ButtonType="Image" ImageUrl="~/delete-16.png" Text="ELIMINAR" CommandName="BTeliminar" />
-                <asp:ButtonField ButtonType="Image" ImageUrl="~/estrella.png" Text="Favoritos" CommandName="BTfavoritos" />
                 <asp:BoundField DataField="emisor" HeaderText="Emisor" />
                 <asp:BoundField DataField="asunto" HeaderText="Asunto" />
                 <asp:ButtonField CommandName="BTver" DataTextField="cuerpo" HeaderText="Mensaje" />
@@ -43,7 +42,6 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 
-
         </asp:GridView> 
-        </div>
+        
 </asp:Content>

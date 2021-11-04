@@ -70,6 +70,7 @@
     <Content Include="Default.aspx" />
     <Content Include="delete-16.png" />
     <Content Include="Eliminados.aspx" />
+    <Content Include="enviados.aspx" />
     <Content Include="estrella.png" />
     <Content Include="eye-16 %281%29.png" />
     <Content Include="Favoritos.aspx" />
@@ -77,6 +78,7 @@
     <Content Include="menu.css" />
     <Content Include="outline-star-16.png" />
     <Content Include="Recibidos.aspx" />
+    <Content Include="revertir %281%29.png" />
     <Content Include="StyleSheet1.css" />
     <Content Include="ver.aspx" />
     <Content Include="Web.config" />
@@ -103,6 +105,13 @@
     </Compile>
     <Compile Include="Eliminados.aspx.designer.cs">
       <DependentUpon>Eliminados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enviados.aspx.cs">
+      <DependentUpon>enviados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="enviados.aspx.designer.cs">
+      <DependentUpon>enviados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Favoritos.aspx.cs">
       <DependentUpon>Favoritos.aspx</DependentUpon>

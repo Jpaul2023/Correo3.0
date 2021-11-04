@@ -37,31 +37,14 @@ namespace Correo
 			//ocultar el codigo
 			if (e.Row.RowType == DataControlRowType.Header)
 			{
-				e.Row.Cells[4].Visible = false;
+				e.Row.Cells[0].Visible = false;
 			}
 			if (e.Row.RowType == DataControlRowType.DataRow)
 			{
-				e.Row.Cells[4].Visible = false;
+				e.Row.Cells[0].Visible = false;
 			}
-			//ocultar el receptor
-			if (e.Row.RowType == DataControlRowType.Header)
-			{
-				e.Row.Cells[6].Visible = false;
-			}
-			if (e.Row.RowType == DataControlRowType.DataRow)
-			{
-				e.Row.Cells[6].Visible = false;
-			}
-			//ocultar el estado
-			if (e.Row.RowType == DataControlRowType.Header)
-			{
-				e.Row.Cells[10].Visible = false;
-			}
-			if (e.Row.RowType == DataControlRowType.DataRow)
-			{
-				e.Row.Cells[10].Visible = false;
-			}
-
+			
+			
 		}
 
 
@@ -80,7 +63,7 @@ namespace Correo
 				//Tabla TC llena con una sola fila, se logra editar el estado 
 				foreach (DataRow fila in TC.Rows)
 				{
-					leerCorreo.EditarEstado("Eliminado", Convert.ToInt32(fila[0]));
+					leerCorreo.DeleteQuery(Convert.ToInt32(fila[0]));
 				}
 				Response.Redirect("Eliminados.aspx");
 			}
@@ -93,7 +76,7 @@ namespace Correo
 
 				DataTable TC = new DataTable();
 				//filtramos codigos utilizando el indice y la columna 4 del grid ya que es la de codigos, a us vez llenamos la tabla TC
-				TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[4].Text));
+				TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[0].Text));
 				//Tabla TC llena con una sola fila, se logra editar el estado 
 				foreach (DataRow fila in TC.Rows)
 				{
@@ -102,14 +85,14 @@ namespace Correo
 				Response.Redirect("Eliminados.aspx");
 			}
 			//*********************************************************************************************************
-			if (e.CommandName.CompareTo("BTver") == 0)
+			if (e.CommandName.CompareTo("restaurar") == 0)
 			{
 				//obtenemos el indice de la fila seleccionada por el boton
 				int indice = Convert.ToInt32(e.CommandArgument);
 
 				DataTable TC = new DataTable();
-				//filtramos codigos utilizando el indice y la columna 4 del grid ya que es la de codigos, a us vez llenamos la tabla TC
-				TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[4].Text));
+				//filtramos codigos utilizando el indice y la columna 0 del grid ya que es la de codigos, a us vez llenamos la tabla TC
+				TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[0].Text));
 				//Tabla TC llena con una sola fila, se logra editar el estado 
 				foreach (DataRow fila in TC.Rows)
 				{
@@ -117,6 +100,23 @@ namespace Correo
 				}
 
 				Response.Redirect("Eliminados.aspx");
+			}
+			if (e.CommandName.CompareTo("BTver") == 0)
+			{
+				int indice = Convert.ToInt32(e.CommandArgument);
+				DataTable TC = new DataTable();
+				//filtramos codigos utilizando el indice y la columna 4 del grid ya que es la de codigos, a us vez llenamos la tabla TC
+				TC = leerCorreo.BuscarCorreos(Convert.ToInt32(GridView1.Rows[indice].Cells[0].Text));
+				//Tabla TC llena con una sola fila, se logra editar el estado 
+				foreach (DataRow fila in TC.Rows)
+				{
+					leerCorreo.EditarEstado("RecLeido", Convert.ToInt32(fila[0]));
+					Session["codigomensaje"] = Convert.ToInt32(fila[0]);
+					Session["emisor"] = fila[1].ToString();
+					Session["mensaje"] = fila[4].ToString();
+					Session["asunto"] = fila[3].ToString();
+					Response.Redirect("ver.aspx");
+				}
 			}
 		}
 

@@ -23,24 +23,22 @@ namespace Correo
 		}
 		//Generadno table adapters para la consulta y manejo de datos del envio del correo.
 		emailTableAdapter EnviarCorreo = new emailTableAdapter();
-		DataTable MisEnviados = new DataTable();
-		PersonaTableAdapter Mispersonas = new PersonaTableAdapter();
-		DataTable PersonasAux = new DataTable();
+		
 		//#####################################################
 
 
         protected void ButtonEnviar_Click(object sender, EventArgs e)
         {
 
-			if (Session["NombreUsuario"] != null)
-			{
-				EnviarCorreo.EnviarCorreo(Session["AuxCorreo"].ToString(), TextBoxdestinatario.Text, TextBoxasunto.Text, TextBoxmensaje.Text, DateTime.Today, "Enviado");
+			
+		
+				EnviarCorreo.EnviarCorreo(Session["AuxiliarCorreo"].ToString(), TextBoxdestinatario.Text, TextBoxasunto.Text, TextBoxmensaje.Text, DateTime.Today, "RecLeido"); ;
 				TextBoxdestinatario.Text = "";
 				TextBoxasunto.Text = "";
 				TextBoxmensaje.Text = "";
 			
 			
-			}
+		
 		}
 
 

@@ -312,14 +312,14 @@ input[type=text] {
     <!-- Login Form -->
     <form>
      
-		<asp:TextBox ID="TextBoxcorreo" class="fadeIn second"  runat="server"></asp:TextBox>
+		<asp:TextBox ID="TextBoxcorreo" class="fadeIn second"  runat="server" ReadOnly="true" OnTextChanged="TextBoxcorreo_TextChanged"></asp:TextBox>
       
-		<asp:TextBox ID="TextBoxasunto" class="fadeIn third"  runat="server"></asp:TextBox>
-		<asp:TextBox ID="TextBoxcontenido" class="fadeIn third"  runat="server" Height="143px" Width="85%"></asp:TextBox>
+		<asp:TextBox ID="TextBoxasunto" class="fadeIn third"  runat="server" ReadOnly="true"></asp:TextBox>
+		<asp:TextBox ID="TextBoxcontenido" class="fadeIn third"  runat="server" Height="143px" Width="85%" ReadOnly="true"></asp:TextBox>
 		<hr />
 		<asp:TextBox ID="TextBoxredactar" class="fadeIn third" placeholder="mensaje" runat="server"></asp:TextBox>
 		<hr />
-		<asp:Button ID="Buttonsubmit" class="fadeIn fourth" runat="server" Text="Responder" />
+		<asp:Button ID="Buttonsubmit" class="fadeIn fourth" runat="server" Text="Responder" OnClick="Buttonsubmit_Click" />
 		<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     </form>
 
